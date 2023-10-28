@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo list</title>
+    <link rel="stylesheet" href="../dist/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
 </head>
+<style>
+    body {
+        border: 2px double #000; /* Ancho y color del borde */
+        box-sizing: border-box; /* Asegura que el borde no afecte el tamaño de la página */
+    }
+    
+    .dark-mode {
+        background-color: #1a1a1a;
+    }
 
+    .dark-mode .button {
+        background-color: #333;
+        color: #fff;
+    }
+    .calendar-container {
+        width: 800px; /* Ancho  */
+        height: 600px; /* Altura  */
+        margin: 0 auto; /* Centrar horizontalmente */
+        border: 1px solid #777; /* Borde  */
+    }
+    .calendar-iframe {
+        width: 100%;
+        height: 100%;
+    }
+</style>
 <body class="bg-gray-100">
     <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-semibold mb-4">To Do List</h1>
+        <h1 class="text-4xl font-semibold text-center text-black mb-8">
+            <span class="text-blue-500">To DO</span>  <span class="text-blue-500">List</span>
+        </h1>
+        
         <form id="task-form" class="mb-4">
             <div class="mb-2">
-                <input type="text" id="task-title" placeholder="Task title" required
+                <input type="text" id="task-title" placeholder="ACTIVIDAD / TAREA" required
                     class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500">
             </div>
-
             <div class="mb-2">
-                <textarea id="task-description" placeholder="Task description"
+                <textarea id="task-description" placeholder="DESCRIPCIÓN"
                     class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-500"></textarea>
             </div>
-            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">Add
-                Task</button>
+            <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">AÑADIR</button>
+            <button id="dark-mode-button" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600" >MODO OSCURO</button>
         </form>
-        <ul id="task-list" class="space-y-4"></ul>
+        <div id="task-list" class="space-y-4"></div>
     </div>
+    <div class="calendar-container">
+        <iframe class="calendar-iframe" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=America%2FEl_Salvador&src=d2FsdGVyZ2VyYXJkbzY3QGdtYWlsLmNvbQ&src=Y2xhc3Nyb29tMTE1NjYzNzY4Mjg0NDMxMzA4MDQwQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZXMtNDE5LnN2I2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZXMuc3YjaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%230047a8&color=%2333B679&color=%230B8043&color=%230B8043" frameborder="0" scrolling="no"></iframe>
+    </div>
+
     <script src="main.js"></script>
 </body>
-
 </html>
