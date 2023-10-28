@@ -65,7 +65,7 @@ function addTaskToDOM(task) {
     });
 
     const taskTitle = document.createElement("h3");
-    taskTitle.className = "text-xl font-semibold";
+    taskTitle.className = "text-x2 font-semibold";
     taskTitle.textContent = task.title;
     
     const taskDescription = document.createElement("p");
